@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { useContext } from "react";
 import GameContext from "../../../lib/context/gameContext";
 
-const Scoreboard = ({ user = "Rgioeli" }) => {
+const Scoreboard = ({ user }) => {
   const context = useContext(GameContext)
 
   return (

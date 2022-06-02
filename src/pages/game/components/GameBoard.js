@@ -6,10 +6,10 @@ import ChooseLetters from "./ChooseLetters";
 import GameButtons from "./GameButtons";
 import WordsToFind from "./WordsToFind";
 
-const GameBoard = () => {
+const GameBoard = ({user}) => {
   return (
     <GameBoardWrapper>
-      <Scoreboard />
+      <Scoreboard user={user} />
       <WordsToFind />
       <LettersWrapper>
         <WordEvent />

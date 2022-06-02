@@ -4,7 +4,7 @@ import GameBoard from "../../src/pages/game/components/GameBoard";
 import { useContext, useEffect } from "react";
 import GameContext from "../../src/lib/context/gameContext";
 
-const Game = ({ wordData, wordsToFind }) => {
+const Game = ({ wordData, wordsToFind, user }) => {
   //context
   const context = useContext(GameContext);
   //router
@@ -17,7 +17,7 @@ const Game = ({ wordData, wordsToFind }) => {
 
   return (
     <GameWrapper>
-      <GameBoard />
+      <GameBoard user={user} />
     </GameWrapper>
   );
 };
@@ -97,6 +97,7 @@ export async function getServerSideProps(ctx) {
       gamertag: ctx.req.cookies.gamertag || ctx.query.gamertag,
       wordData,
       wordsToFind,
+      user: ctx.query.gamertag
     },
   };
 }
