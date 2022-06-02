@@ -52,9 +52,8 @@ const GameButtons = () => {
       {error && <Error>{error}</Error>}
       <SubmitButtonWrapper>
         <SubmitButton disabled={loading} onClick={handleSubmitWord}>
-          Submit Word
+        {loading ? <Audio width={30} height={30} color={"#fff"} /> : "Submit Word"}
         </SubmitButton>
-        {loading && <Audio width={30} height={30} color={"#4320df"} />}
       </SubmitButtonWrapper>
       <ChoiceButtons>
         <button onClick={handleScrambleLetters}>Scramble Letters</button>
