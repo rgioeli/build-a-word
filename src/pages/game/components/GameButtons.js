@@ -7,15 +7,18 @@ const GameButtons = () => {
   //context
   const context = useContext(GameContext);
   //state
-  const [error, setError] = useState();
+  const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState(false);
   const handleClearWord = () => {
     return context.clearLetters();
   };
   const handleScrambleLetters = () => {
     return context.scrambleLetters();
   };
+
+  useEffect(() => {
+    error && setTimeout(() => setError(null), 3000)
+  }, [error])
 
   const handleSubmitWord = async () => {
     setLoading(true);
@@ -46,6 +49,7 @@ const GameButtons = () => {
   };
   return (
     <GameButtonsWrapper>
+      {error && <Error>{error}</Error>}
       <SubmitButtonWrapper>
         <SubmitButton disabled={loading} onClick={handleSubmitWord}>
           Submit Word
@@ -67,6 +71,14 @@ export default GameButtons;
 const GameButtonsWrapper = styled.div`
   width: 350px;
 `;
+
+const Error = styled.div`
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom:0.5rem;
+  color:darkred;
+`
 
 const SubmitButtonWrapper = styled.div`
   margin-bottom: 0.5rem;
