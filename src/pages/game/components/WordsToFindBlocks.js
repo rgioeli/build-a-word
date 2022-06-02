@@ -20,7 +20,7 @@ const WordsToFindBlocks = ({ quantity }) => {
   return (
     <WordsToFindBlocksWrapper>
       {array && array.map((x, index) => {
-        return <Block highlight={typeof array[0] == "string"} ref={blockRef}>{typeof x == "string" && x.toUpperCase()}</Block>
+        return <Block key={index} highlight={typeof array[0] == "string"} ref={blockRef}>{typeof x == "string" && x.toUpperCase()}</Block>
       })}
     </WordsToFindBlocksWrapper>
   );

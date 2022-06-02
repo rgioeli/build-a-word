@@ -11,7 +11,7 @@ const WordEvent = ({ wordData }) => {
         <GuessedLettersWrapper>
           {context.guessedLetters.length !== 0
             ? context.guessedLetters.map(({ id, letter }) => {
-                return <GuessedLetter id={id} letter={letter} />;
+                return <GuessedLetter key={id} id={id} letter={letter} />;
               })
             : null}
         </GuessedLettersWrapper>

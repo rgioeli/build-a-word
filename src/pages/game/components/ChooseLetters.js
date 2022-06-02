@@ -9,7 +9,7 @@ const ChooseLetters = () => {
     <ChooseLettersWrapper>
       {context.availableLetters &&
         context.availableLetters.map(({ id, letter }) => {
-          return <Letter id={id} letter={letter} />;
+          return <Letter key={id} id={id} letter={letter} />;
         })}
     </ChooseLettersWrapper>
   );

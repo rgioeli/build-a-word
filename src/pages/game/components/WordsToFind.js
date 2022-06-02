@@ -11,8 +11,8 @@ const WordsToFind = () => {
         context.wordsToFind.map(
           (quantity) =>
             quantity?.length > 0 &&
-            quantity.map((num) => {
-            return <WordsToFindBlocks quantity={num} />
+            quantity.map((num, index) => {
+            return <WordsToFindBlocks key={index} quantity={num} />
           })
         )}
     </WordsToFindWrapper>
