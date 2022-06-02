@@ -30,7 +30,7 @@ const GameWrapper = styled.div`
 `;
 
 export async function getServerSideProps(ctx) {
-  if (!ctx.req.cookies.gamertag && !ctx.query.gamertag) {
+  if (!ctx.req.cookies.gamertag || !ctx.query.gamertag) {
     return {
       redirect: {
         destination: "/",
