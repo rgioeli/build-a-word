@@ -28,7 +28,6 @@ const GameBoardWrapper = styled.div`
   flex-flow: column;
   justify-content: center;
   align-items: center;
-  border: 2px solid red;
 `;
 
 const LettersWrapper = styled.div`

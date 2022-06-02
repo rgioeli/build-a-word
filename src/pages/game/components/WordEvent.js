@@ -28,14 +28,20 @@ const WordEventWrapper = styled.div`
     font-size: 1.1rem;
     font-weight: bold;
   }
+  margin-bottom: 1rem;
 `;
 const GuessedLettersWrapper = styled.div`
+height: 100px;
   display: flex;
-  width: 100%;
-  height: 85px;
-  justify-content: flex-start;
   align-items: center;
-  border-radius: 1rem;
+  justify-content: flex-start;
+  margin:auto;
+  background-color:#4320df;
+  padding:1rem;
+  border-radius:1rem;
+  width:100%;
+  max-width:550px;
+  border:3px solid #4320df;
 `;
 
 export default WordEvent;

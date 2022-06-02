@@ -21,7 +21,12 @@ const ChooseLettersWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  border: 1px solid green;
-  height: 85px;
-  width: 100%;
+  margin:auto;
+  background-color:#fff;
+  padding:1rem;
+  border-radius:1rem;
+  width:100%;
+  max-width:550px;
+  border:3px solid #4320df;
+  height: 100px;
 `;

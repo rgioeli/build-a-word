@@ -11,7 +11,9 @@ const WordsToFind = () => {
         context.wordsToFind.map(
           (quantity) =>
             quantity?.length > 0 &&
-            quantity.map((num) => <WordsToFindBlocks quantity={num} />)
+            quantity.map((num) => {
+            return <WordsToFindBlocks quantity={num} />
+          })
         )}
     </WordsToFindWrapper>
   );
@@ -20,7 +22,9 @@ const WordsToFind = () => {
 export default WordsToFind;
 
 const WordsToFindWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  width: 100%;
+  display:grid;
+  max-width:500px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 0.5rem;
+  align-content: center;
 `;

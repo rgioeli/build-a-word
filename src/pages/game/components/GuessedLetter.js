@@ -18,7 +18,7 @@ const GuessedLetter = ({ id, letter }) => {
 const GuessedLetterWrapper = styled.div`
   height: 75px;
   width: 75px;
-  margin-right: 1rem;
+  margin-right: 0.25rem;
   color: #4320df;
   font-weight: bold;
   border: 1px solid black;
@@ -30,6 +30,15 @@ const GuessedLetterWrapper = styled.div`
   border: 5px solid #391cbb;
   border-radius: 1rem;
   cursor: pointer;
+
+  @media screen and (max-width: 450px) {
+    height: 50px;
+  width: 50px;
+  height: 50px;
+  width: 50px;
+  border-radius: unset;
+  font-size:1.1rem;
+  }
 `;
 
 export default GuessedLetter;

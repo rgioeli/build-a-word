@@ -7,22 +7,40 @@ export const GameProvider = ({ children }) => {
   const [availableLetters, setAvailableLetters] = useState([]);
   const [correctWords, setCorrectWords] = useState([]);
   const [wordsToFind, setWordsToFind] = useState([]);
+  const [points, setPoints] = useState(0)
 
   const guessLetter = (letter) => {
     return setGuessedLetters((prevState) => [...prevState, letter]);
   };
 
   const updateWordsToFind = (word) => {
-    wordsToFind.forEach((arr) => {
-      arr.some((value) => {
-        if (word.length == value) {
-          return console.log("YES");
+    let updatedWordsClone = [...wordsToFind];
+    const updatedWords = updatedWordsClone.map((x) => {
+      let skip = false;
+      x.map(y => {
+        if (y == word) {
+          skip = true;
         }
-        return true;
-      });
+      })
+      if (x[0] == word.length && !skip) {
+        x[0] = word;
+  
+        x.sort((a, b) => {
+          if (typeof b == "string") {
+            return -1;
+          }
+        });
+      }
+  
+      return x;
     });
-    console.log(wordsToFind);
+
+    return setWordsToFind(updatedWords)
   };
+
+  const updatePoints = (word) => {
+    setPoints(prevState => prevState + word.length)
+  }
 
   const takeAwayLetter = (letterId) => {
     return setAvailableLetters((prevState) =>
@@ -73,6 +91,9 @@ export const GameProvider = ({ children }) => {
         wordsToFind,
         setWordsToFind,
         updateWordsToFind,
+        points,
+        setPoints,
+        updatePoints
       }}
     >
       {children}

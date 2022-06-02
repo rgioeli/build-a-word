@@ -35,8 +35,10 @@ const GameButtons = () => {
       if (data.error) setError(data.error);
       if (data.success) {
         context.updateWordsToFind(data.success);
+        context.updatePoints(data.success)
       }
       setLoading(false);
+      context.clearLetters();
     } catch (e) {
       console.log(e);
       setLoading(false);
