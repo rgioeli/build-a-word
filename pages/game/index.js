@@ -42,7 +42,7 @@ export async function getServerSideProps(ctx) {
     id: 1,
     master: ["adapts"],
     five: ["pasta", "adapt"],
-    four: ["spat", "taps", "tats", "pads", "past", "pats", "data"],
+    four: ["spat", "taps", "pads", "past", "pats", "data"],
     three: [
       "spa",
       "tap",
